@@ -1,3 +1,8 @@
-// Startup point for the client side application
+// Startup point for the client side application which boot up in the browser
+// Normal react start up location
 
-console.log('Hi there!');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Home from './components/Home';
+
+ReactDOM.hydrate(<Home />, document.querySelector('#root'));
