@@ -95,7 +95,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var app = (0, _express2.default)();
 app.use(_express2.default.static('public'));
 
-app.get('/', function (req, res) {
+app.get('*', function (req, res) {
     res.send((0, _renderer2.default)(req));
 });
 
@@ -170,13 +170,18 @@ var _Home = __webpack_require__(7);
 
 var _Home2 = _interopRequireDefault(_Home);
 
+var _About = __webpack_require__(8);
+
+var _About2 = _interopRequireDefault(_About);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = function () {
     return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default })
+        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default }),
+        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/about', component: _About2.default })
     );
 };
 
@@ -217,6 +222,37 @@ var Home = function Home() {
 };
 
 exports.default = Home;
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var About = function About() {
+    return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+            'div',
+            null,
+            'About page!'
+        )
+    );
+};
+
+exports.default = About;
 
 /***/ })
 /******/ ]);
